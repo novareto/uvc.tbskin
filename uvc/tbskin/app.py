@@ -109,6 +109,13 @@ class LoggedinAs(uvcsite.MenuItem):
 
 from megrok.z3ctable import TablePage, Column, table
 
+class TableItem(uvcsite.MenuItem):
+    grok.context(uvcsite.IMyHomeFolder)
+    grok.title("Table")
+    action = "title"
+
+
+
 class Table(TablePage):
     """
     """
