@@ -36,6 +36,14 @@ body {
   color: #666 !important;
 }
 
+.tabs { 
+  clear: both;
+}
+
 .tabs li {
+  float: right;
+}
+
+.help-button { 
   float: right;
 }
