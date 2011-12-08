@@ -55,13 +55,13 @@ class StatMenu(uvcsite.MenuItem):
 
 
 class ADMenu(grok.Viewlet):
-    grok.viewletmanager(uvcsite.IAboveContent)
+    grok.viewletmanager(uvcsite.ITabs)
     grok.context(AdressBook)
     grok.order(40)
 
     def render(self):
         url = self.view.url(self.context, 'stat')
-        return "<dl class='dropdown'> <dt> <a href=%s> Alte Dokumente </a> </dt> </dl>" % url
+        return "<li><a href='%s'>Alte Dokumente</a></li>" % url
 
 
 

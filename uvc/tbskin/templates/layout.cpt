@@ -18,6 +18,8 @@
       <div class="content">
         <div id="uvc-above-body"
 	     tal:content="structure provider:uvc-above-body"></div>
+        <div id="uvc-tabs"
+	     tal:content="structure provider:uvc-tabs"></div>
         <div id="uvc-inner-body"
 	     tal:content="structure view.content()"></div>
         <div id="uvc-below-body"
