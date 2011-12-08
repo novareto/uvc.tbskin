@@ -6,13 +6,19 @@
     <tal:header tal:content="structure provider:uvc-headers" />
   </head>
   <body>
+    <div id="uvc-header" class="topbar" data-dropdown="dropdown">
+      <div class="topbar-inner">
+	<div class="container">
+	  <a href="/" class="brand">UVCSite</a>
+	  <tal:viewlets content="structure provider:uvc-pagetop" />
+	</div>
+      </div>
+    </div>
     <div class="container">
-      <div id="uvc-header container"
-	   tal:content="structure provider:uvc-pagetop" />
-      <div id="container">
+      <div class="content">
         <div id="uvc-above-body"
 	     tal:content="structure provider:uvc-above-body" />
-        <div id="uvc-inner-body content"
+        <div id="uvc-inner-body"
 	     tal:content="structure view.content()" />
         <div id="uvc-below-body"
 	     tal:content="structure provider:uvc-below-body" />
