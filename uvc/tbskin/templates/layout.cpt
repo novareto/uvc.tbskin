@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <tal:resources tal:content="provider:uvc-resources" />
+  <head>
+    <base href="" tal:attributes="href layout.base"/> 
+    <tal:header tal:content="structure provider:uvc-headers" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="uvc-header container"
+	   tal:content="structure provider:uvc-pagetop" />
+      <div id="container">
+        <div id="uvc-above-body"
+	     tal:content="structure provider:uvc-above-body" />
+        <div id="uvc-inner-body content"
+	     tal:content="structure view.content()" />
+        <div id="uvc-below-body"
+	     tal:content="structure provider:uvc-below-body" />
+      </div>
+      <footer tal:content="structure provider:uvc-footer" />
+    </div>
+  </body>
+</html>
