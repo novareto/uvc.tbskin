@@ -27,7 +27,7 @@
       <div class="fields"
            tal:condition="view.fieldWidgets">
         <div class="field clearfix" tal:repeat="widget view.fieldWidgets"
-          tal:attributes="class 'field clearfix'">
+          tal:attributes="class widget.error and 'error field clearfix' or 'field clearfix'">
           <label class="field-label" for="#"
                  tal:attributes="for widget.htmlId()"
                  tal:content="widget.title">
@@ -49,7 +49,7 @@
           </tal:error>
           <div class="input">
              <tal:widget tal:content="structure widget.render()" />
-            <span class="field-error"
+            <span class="help-inline"
                   tal:condition="widget.error"
                   tal:content="widget.error.title">
               Error
