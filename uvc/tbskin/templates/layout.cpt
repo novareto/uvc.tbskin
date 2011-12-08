@@ -17,13 +17,13 @@
     <div class="container">
       <div class="content">
         <div id="uvc-above-body"
-	     tal:content="structure provider:uvc-above-body" />
+	     tal:content="structure provider:uvc-above-body"></div>
         <div id="uvc-inner-body"
-	     tal:content="structure view.content()" />
+	     tal:content="structure view.content()"></div>
         <div id="uvc-below-body"
-	     tal:content="structure provider:uvc-below-body" />
+	     tal:content="structure provider:uvc-below-body"></div>
       </div>
-      <footer tal:content="structure provider:uvc-footer" />
+      <footer tal:content="structure provider:uvc-footer"></footer>
     </div>
   </body>
 </html>
