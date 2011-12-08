@@ -34,6 +34,12 @@ grok.templatedir('templates')
 class Index(uvcsite.Page):
     grok.context(interface.Interface)
 
+    def update1(self):
+        self.flash('Normal')
+        self.flash('Warning', type="success")
+        self.flash('Error', type="error")
+        self.flash('Info', type="info")
+
 class HTMLTags(uvcsite.Page):
     grok.context(interface.Interface)
 
@@ -80,6 +86,16 @@ class MyForm(uvcsite.Form):
         self.flash(u'Success')
 
 
+
+class MyFormHelp(uvcsite.HelpPage):
+    grok.context(interface.Interface)
+    grok.view(MyForm)
+
+    def render(self):
+        return "BLA BLA BLA"
+
+
+
 class LoggedinAs(uvcsite.MenuItem):
     grok.context(interface.Interface)
     grok.viewletmanager(uvcsite.IPersonalPreferences)
@@ -88,4 +104,98 @@ class LoggedinAs(uvcsite.MenuItem):
     def title(self):
         return "You are logged in as MASTER"
 
+
+
+
+from megrok.z3ctable import TablePage, Column, table
+
+class Table(TablePage):
+    """
+    """
+    grok.context(Interface)
+    cssClasses = {'table': 'tablesorter'}
+    grok.title('Tabelle')
+    title = "Tabelle"
+    description = "Beispieltabelle"
+
+
+    startBatchingAt = 10
+    batchSize = 10
+
+    @property
+    def values(self):
+        return range(100)
+
+class Number(Column):
+    table(Table)
+    grok.context(Interface)
+    header = "Number"
+    cssClasses = {'td':'right',}
+
+    def renderCell(self, item):
+        return item
+
+class SortNumber(Column):
+    grok.name('hase')
+    table(Table)
+    grok.context(Interface)
+    header = "SortNumber"
+
+    def renderCell(self, item):
+        return item
+                   
+
+
+#
+## GroupForm
+#
+
+
+class IPerson(interface.Interface):
+
+    id = schema.TextLine(
+       title = u"Id",
+       description = u"Id",
+       max_length=3,
+       )
+
+    name = schema.TextLine(
+       title = u"Name",
+       description = u"Bitte geben Sie hier den Namen ein",
+       )
+
+    vorname = schema.TextLine(
+        title = u"Vorname",
+        description = u"Bitte geben Sie den Vornamen ein",
+        )
+
+
+
+class SplitContact(uvcsite.GroupForm):
+    grok.title(u'FieldsetBasedForm')
+    grok.context(uvcsite.IUVCSite)
+
+
+class Father(uvcsite.SubForm):
+    grok.context(uvcsite.IUVCSite)
+    grok.view(SplitContact)
+    fields = uvcsite.Fields(IPerson)
+
+    label = "Father"
+
+    @uvcsite.action(u'Abschicken')
+    def handleButton(self):
+        data, errors = self.extractData()
+
+
+class Mother(uvcsite.SubForm):
+    grok.context(uvcsite.IUVCSite)
+    grok.view(SplitContact)
+    fields = uvcsite.Fields(IPerson)
+
+    label = "Mother"
+
+    @uvcsite.action(u'Abschicken')
+    def handleButton(self):
+        data, errors = self.extractData()
 
