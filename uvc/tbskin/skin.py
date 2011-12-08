@@ -30,3 +30,4 @@ class Layout(layout.Layout):
         self.base = absoluteURL(self.context, self.request)
         if IContainer.providedBy(self.context) and self.base[:-1] != '/':
             self.base = self.base + '/'
+
