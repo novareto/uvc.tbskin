@@ -10,11 +10,12 @@ from js.bootstrap import bootstrap
 
 library = Library('nva.tbskin', 'static')
 main_css = Resource(library, 'main.css')
+main_js = Resource(library, 'main.js')
 
 
 class TBSkinViewlet(resourceviewlet.ResourceViewlet):
     grok.context(Interface)
-    resources = [main_css, bootstrap]
+    resources = [main_css, bootstrap, main_js]
 
     def update(self):
         [x.need() for x in self.resources]

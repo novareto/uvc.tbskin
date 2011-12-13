@@ -15,9 +15,10 @@ grok.templatedir('templates')
 class Breadcrumbs(crumbs.Breadcrumbs):
     grok.layer(ITBSkinLayer)
     grok.viewletmanager(uvcsite.IAboveContent)
-    grok.order(19)
+    grok.order(20)
 
 
 class FlashMessages(FlashMessages):
     grok.layer(ITBSkinLayer)
     grok.viewletmanager(uvcsite.IAboveContent)
+    grok.order(30)
