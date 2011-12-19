@@ -28,7 +28,7 @@ setup(name='uvc.tbskin',
       ],
       entry_points={
          'fanstatic.libraries': [
-            'uvc.tbskin = uvc.tbskin.app:library',
+            'uvc.tbskin = uvc.tbskin.resources:library',
             ],
          'z3c.autoinclude.plugin': 'target=uvcsite', 
       }
