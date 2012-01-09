@@ -3,14 +3,14 @@
   <h1 class="page-header"
       tal:condition="view.label"
       tal:content="view.label">Label</h1>
-  
+
   <p tal:condition="view.description"
      tal:content="view.description">Description</p>
 
   <p class="alert-message block-message"
      tal:condition="view.status"
      tal:content="view.status">Status</p>
-  
+
   <div class="alert-message block-message error"
        tal:condition="view.errors">
     <ul tal:condition="view.formErrors"
@@ -23,7 +23,7 @@
     <div class="fields"
 	 tal:condition="view.fieldWidgets">
       <div class="field clearfix" tal:repeat="widget view.fieldWidgets"
-	   tal:attributes="class widget.error and 'field clearfix error' or 'field clearfix'">
+	   tal:attributes="class widget.error and 'field clearfix error' or 'field clearfix'; id string:form-${widget/htmlId}">
 	<label class="field-label" for="#"
 	       tal:attributes="for widget.htmlId()"
 	       tal:content="widget.title">

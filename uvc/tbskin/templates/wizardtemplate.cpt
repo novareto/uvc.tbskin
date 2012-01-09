@@ -1,0 +1,36 @@
+<div>
+  <div class="portalMessage" tal:condition="view.status" tal:content="view.status"> </div>
+  <h1 tal:content="view.label"> </h1>
+  <form action="." method="post" tal:attributes="action request.getURL()" enctype="multipart/form-data" class="dolmen-wizard-form">
+    <fieldset>
+      <legend tal:content="view.current.label"> </legend>
+      <div class="step-fields" tal:condition="view.current.fieldWidgets">
+        <div class="field clearfix"
+          tal:repeat="widget view.current.fieldWidgets"
+          tal:attributes="class widget.error and 'field clearfix error' or 'field clearfix'; id 'field-' + widget.htmlId()">
+          <label class="field-label" for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title"> Label </label>
+          <div class="input widget">
+            <tal:widget tal:content="structure widget.render()" />
+            <span class="field-error" tal:condition="widget.error" tal:content="widget.error.title"> Error </span>
+          </div>
+        </div>
+      </div>
+      <div class="fields" tal:condition="view.fieldWidgets">
+        <span class="field" tal:repeat="widget view.fieldWidgets">
+          <div class="input">
+          <tal:widget tal:content="structure widget.render()" />
+          <span class="field-error" tal:condition="widget.error" tal:content="widget.error.title"> Error </span>
+          </div>
+        </span>
+      </div>
+      <div class="actions">
+        <span class="action" tal:repeat="widget view.actionWidgets">
+          <tal:widget tal:content="structure widget.render()" />
+        </span>
+        <span class="action" tal:repeat="widget view.current.actionWidgets">
+          <tal:widget tal:content="structure widget.render()" />
+        </span>
+      </div>
+    </fieldset>
+  </form>
+</div>

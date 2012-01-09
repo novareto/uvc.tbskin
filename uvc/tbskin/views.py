@@ -8,7 +8,7 @@ from urllib import urlencode
 import megrok.pagetemplate as pt
 from skin import ITBSkin
 
-from dolmen.forms.base import ApplicationForm 
+from dolmen.forms.base import ApplicationForm
 from zope.interface import Interface
 from z3c.table.batch import BatchProvider
 from z3c.table.interfaces import ITable
@@ -46,16 +46,15 @@ class CustomBatch(BatchProvider, grok.MultiAdapter):
 
     def renderBatchLink(self, batch, cssClass=None):
         args = self.getQueryStringArgs()
-        args[self.table.prefix +'-batchStart'] = batch.start
-        args[self.table.prefix +'-batchSize'] = batch.size
+        args[self.table.prefix + '-batchStart'] = batch.start
+        args[self.table.prefix + '-batchSize'] = batch.size
         query = urlencode(sorted(args.items()))
         tableURL = absoluteURL(self.table, self.request)
         idx = batch.index + 1
         css = ' class="%s"' % cssClass
         cssClass = cssClass and css or u''
-        return '<li %s><a href="%s?%s"%s>%s</a><li>' % (cssClass, tableURL, query, cssClass, idx)
-
-
+        return '<li %s><a href="%s?%s"%s>%s</a><li>' % (
+            cssClass, tableURL, query, cssClass, idx)
 
     def render(self):
         self.update()
