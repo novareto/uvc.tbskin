@@ -1,34 +1,30 @@
 /* EXAMPLE */
 
-html, body {
- background-color: #eee;
+html {
+ background-color: #FFFFFF;
 }
 
 body {
-  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+    background-color: #FFFFFF;
+    background-image: url("grid-18px-masked.png");
+    background-position: 0 40px;
+    background-repeat: repeat-x;
+    padding-top: 58px;
+    position: relative;
 }
 
-.container > footer p {
-   text-align: center; /* center align it with the container */
- }
- 
-.container {
-   width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+.footer {
+    border-top: 1px solid #E5E5E5;
+    margin-top: 50px;
+    padding: 5px 0 36px;
 }
 
-.content {
-  background-color: #fff;
-  padding: 20px;
-  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+div#footerviewlet{
+  float:right;
+
 }
 
-#homefolder-contenttypes { 
+#homefolder-contenttypes {
   float: right;
 }
 
@@ -36,14 +32,17 @@ body {
   color: #666 !important;
 }
 
-.tabs { 
-  clear: both;
+div#uvc-tabs {
+  float:right;
+  background-color: #FBFBFB;
+  border: 1px solid #DDDDDD;
+  background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);
 }
 
-.tabs li {
-  float: right;
+div#uvc-tabs ul {
+  margin-bottom: 1px;
 }
 
-.help-button { 
+.help-button {
   float: right;
 }
