@@ -1,8 +1,0 @@
-<div>
-  <h1 tal:content="view/title"/>
-  <p class="big" tal:content="view/description"/> 
-  <span tal:replace="structure view/renderTable"/>
-
-  <div class="pagination" 
-       tal:content="structure view/renderBatch"/>
-</div>

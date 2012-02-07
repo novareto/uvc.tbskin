@@ -3,18 +3,18 @@
 # ck@novareto.de
 
 import grok
-from urllib import urlencode
-
 import megrok.pagetemplate as pt
-from skin import ITBSkin
+
 
 from dolmen.forms.base import ApplicationForm
-from zope.interface import Interface
+from skin import ITBSkin
+from urllib import urlencode
+from uvc.layout.forms.components import GroupForm, SubForm, Wizard
+from uvc.layout.layout import IUVCSkin
 from z3c.table.batch import BatchProvider
 from z3c.table.interfaces import ITable
-from uvc.layout.layout import IUVCSkin
+from zope.interface import Interface
 from zope.traversing.browser import absoluteURL
-from uvc.layout.forms.components import GroupForm, SubForm, Wizard
 
 
 grok.templatedir('templates')
