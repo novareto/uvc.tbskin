@@ -19,9 +19,9 @@
   </div>
 
   <fieldset >
-    <legend tal:content="view.legend or ''"> </legend>
+    <legend tal:condition="hasattr(view, 'legend')" tal:content="view.legend"> </legend>
     <div class="fields" tal:condition="view.fieldWidgets">
-      <div class="control-group" tal:repeat="widget view.fieldWidgets" tal:attributes="class widget.error and 'control-group error' or 'control-group'">
+      <div class="control-group" tal:repeat="widget view.fieldWidgets">
 	     <label class="control-label" for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title">Label</label>
 	     <tal:error tal:define="error widget.error" tal:condition="error" />
 	     <div class="input controls">
