@@ -10,14 +10,6 @@
      tal:condition="view.status"
      tal:content="view.status">Status</p>
 
-  <div class="alert-message block-message error"
-       tal:condition="view.errors">
-    <ul tal:condition="view.formErrors"
-	tal:repeat="error view.formErrors">
-      <li> <span tal:replace="error.title" /> </li>
-    </ul>
-  </div>
-
   <fieldset >
     <legend tal:condition="hasattr(view, 'legend')" tal:content="view.legend"> </legend>
     <div class="fields" tal:condition="view.fieldWidgets">
