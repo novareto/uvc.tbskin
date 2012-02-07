@@ -93,4 +93,3 @@ class CustomBatch(BatchProvider, grok.MultiAdapter):
             else:
                 append(self.renderBatchLink(batch))
         return u'<ul>%s</ul>' % (''.join(res))
-
