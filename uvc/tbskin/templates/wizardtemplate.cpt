@@ -10,9 +10,10 @@
 
   <fieldset>
       <legend tal:content="view.current.label" />
+      <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo"/>
       <div class="step-fields" tal:condition="view.current.fieldWidgets">
         <div class="control-group" tal:repeat="widget view.current.fieldWidgets"
-              tal:attributes="class widget.error and 'control-group error' or 'control-group'">
+              tal:attributes="class widget.error and 'control-group error' or 'control-group'; id 'field-' + widget.htmlId()">
           <label class="control-label" tal:attributes="for widget.htmlId()" tal:content="widget.title"> Label </label>
           <div class="input controls">
             <tal:widget tal:content="structure widget.render()" />
@@ -27,11 +28,13 @@
         </span>
       </div>
       <div class="form-actions">
-        <div class="action" tal:repeat="widget view.actionWidgets">
+        <div class="action">
+         <span tal:repeat="widget view.actionWidgets">
           <tal:widget tal:content="structure widget.render()" />
-        </div>
-        <div class="action" tal:repeat="widget view.current.actionWidgets">
+        </span>
+        <span tal:repeat="widget view.current.actionWidgets">
            <tal:widget tal:content="structure widget.render()" />
+         </span>
         </div>
       </div>
   </fieldset>

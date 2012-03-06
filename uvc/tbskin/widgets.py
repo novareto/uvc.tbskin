@@ -1,9 +1,16 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2007-2011 NovaReto GmbH
+# cklinger@novareto.de 
+
 import grok
-from zeam.form.ztk.widgets.choice import RadioFieldWidget, ChoiceSchemaField
+
 from skin import ITBSkin 
 from zope.interface import Interface
+from zeam.form.ztk.widgets.choice import RadioFieldWidget, ChoiceSchemaField
+
 
 grok.templatedir('templates')
+
 
 class UvcRadioFieldWidget(RadioFieldWidget):
     """ Simple Override for removing <br> between choices
