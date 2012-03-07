@@ -30,6 +30,5 @@ setup(name='uvc.tbskin',
          'fanstatic.libraries': [
             'uvc.tbskin = uvc.tbskin.resources:library',
             ],
-         'z3c.autoinclude.plugin': 'target=uvcsite', 
       }
       )
