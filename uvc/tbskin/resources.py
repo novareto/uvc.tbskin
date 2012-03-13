@@ -9,14 +9,15 @@ from fanstatic import Library, Resource
 from js.bootstrap import bootstrap_js, bootstrap_responsive_css
 from js.jquery_tablesorter import tablesorter
 
+
 library = Library('nva.tbskin', 'static')
-main_css = Resource(library, 'main.css')
-main_js = Resource(library, 'main.js', depends=[tablesorter])
+main_css = Resource(library, 'main.css', depends=[bootstrap_responsive_css])
+main_js = Resource(library, 'main.js', depends=[bootstrap_js, tablesorter])
 
 
 class TBSkinViewlet(resourceviewlet.ResourceViewlet):
     grok.context(Interface)
-    resources = [main_css, bootstrap_js, bootstrap_responsive_css, main_js]
+    resources = [main_css, main_js]
 
     def update(self):
         [x.need() for x in self.resources]
