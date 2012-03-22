@@ -1,4 +1,4 @@
-<form action="." novalidate="novalidate" tal:attributes="action request.URL" method="post"
+<form metal:define-macro="editform" action="." novalidate="novalidate" tal:attributes="action request.URL" method="post"
       enctype="multipart/form-data" class="form-horizontal">
   <h2
       tal:condition="view.label"
@@ -10,10 +10,12 @@
      tal:condition="view.status"
      tal:content="view.status">Status</p>
 
-  <fieldset >
+  <fieldset metal:define-macro="form-fieldset">
     <legend tal:condition="hasattr(view, 'legend')" tal:content="view.legend"> </legend>
+      <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo"/>
     <div class="fields" tal:condition="view.fieldWidgets">
-      <div class="control-group" tal:repeat="widget view.fieldWidgets" tal:attributes="id 'field-' + widget.htmlId()">
+      <div class="control-group" tal:repeat="widget view.fieldWidgets" 
+        tal:attributes="class widget.error and 'control-group error' or 'control-group'; id 'field-' + widget.htmlId()">
 	     <label class="control-label" for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title">Label</label>
 	     <tal:error tal:define="error widget.error" tal:condition="error" />
 	     <div class="input controls">
@@ -24,9 +26,9 @@
       </div>
       </div>
     <div class="form-actions" tal:condition="view.actionWidgets">
-      <div class="action" tal:repeat="widget view.actionWidgets">
+      <span class="action" tal:repeat="widget view.actionWidgets">
 	        <tal:widget tal:content="structure widget.render()" />
-      </div>
+      </span>
     </div>
   </fieldset>
 </form>

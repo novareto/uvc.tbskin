@@ -15,9 +15,15 @@ from z3c.table.batch import BatchProvider
 from z3c.table.interfaces import ITable
 from zope.interface import Interface
 from zope.traversing.browser import absoluteURL
+from grokcore.chameleon.components import ChameleonPageTemplateFile
 
 
 grok.templatedir('templates')
+
+
+class FormMacros(grok.View):
+    grok.context(Interface)
+    template = ChameleonPageTemplateFile('templates/formtemplate.cpt')
 
 
 class FormTemplate(pt.PageTemplate):

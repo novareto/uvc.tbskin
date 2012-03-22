@@ -1,5 +1,5 @@
 <div>
-  <form action="." method="post" tal:attributes="action request.getURL()" enctype="multipart/form-data" class="form-horizontal">
+  <form action="." novalidate="novalidate" method="post" tal:attributes="action request.getURL()" enctype="multipart/form-data" class="form-horizontal">
   <h2 tal:condition="view.label"
       tal:content="view.label">Label</h2>
   <p tal:condition="view.description"
