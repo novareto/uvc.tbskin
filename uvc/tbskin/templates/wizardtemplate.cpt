@@ -15,7 +15,8 @@
         <div class="control-group" tal:repeat="widget view.current.fieldWidgets"
               tal:attributes="class widget.error and 'control-group error' or 'control-group'; id 'field-' + widget.htmlId()">
              <label class="control-label" for="#" tal:attributes="for widget.htmlId()">
-              <span tal:content="widget.required and widget.title + '*' or widget.title"> </span> 
+              <span tal:content="widget.title"> </span> 
+              <span tal:content="string:*" tal:condition="widget.required"/>
              </label>
 
           <div class="input controls">
