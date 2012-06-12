@@ -46,3 +46,10 @@ div#uvc-tabs ul {
 .help-button {
   float: right;
 }
+
+ul#documentactionsmenuviewlet{
+  float: right;
+  list-style: none;
+  padding-top: 1em;
+}
+
