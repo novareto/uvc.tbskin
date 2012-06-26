@@ -3,7 +3,7 @@
 # ck@novareto.de
 
 import grok
-import uvcsite
+import uvc.layout 
 
 from skin import ITBSkinLayer
 from dolmen.app.breadcrumbs import crumbs
@@ -14,11 +14,11 @@ grok.templatedir('templates')
 
 class Breadcrumbs(crumbs.Breadcrumbs):
     grok.layer(ITBSkinLayer)
-    grok.viewletmanager(uvcsite.IAboveContent)
+    grok.viewletmanager(uvc.layout.interfaces.IAboveContent)
     grok.order(20)
 
 
 class FlashMessages(FlashMessages):
     grok.layer(ITBSkinLayer)
-    grok.viewletmanager(uvcsite.IAboveContent)
+    grok.viewletmanager(uvc.layout.interfaces.IAboveContent)
     grok.order(30)
