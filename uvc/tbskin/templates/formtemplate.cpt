@@ -17,8 +17,8 @@
       <div class="control-group" tal:repeat="widget view.fieldWidgets" 
            tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
 	     <label class="control-label" for="#" tal:attributes="for widget.htmlId()"> 
-              <span tal:content="widget.required and widget.title + '*' or widget.title"> </span> 
-             </label>
+         <span tal:content="widget.title"> </span> <span tal:condition="widget.required"> * </span> 
+       </label>
 	     <tal:error tal:define="error widget.error" tal:condition="error" />
 	     <div class="input controls">
 	        <tal:widget tal:content="structure widget.render()" />
