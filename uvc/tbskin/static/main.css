@@ -1,5 +1,5 @@
 /* EXAMPLE */
-
+/*
 html {
  background-color: #FFFFFF;
 }
@@ -18,7 +18,7 @@ body {
     margin-top: 50px;
     padding: 5px 0 36px;
 }
-
+*/
 div#footerviewlet{
   float:right;
 
@@ -53,3 +53,6 @@ ul#documentactionsmenuviewlet{
   padding-top: 1em;
 }
 
+.breadcrumb {
+  padding-top: 51px;
+}
