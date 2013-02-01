@@ -1,22 +1,40 @@
 <div>
-  <h1 tal:condition="view.label"
-    tal:content="view.label">Label</h1>
+    <h1 tal:condition="view.label"
+        tal:content="view.label">Label</h1>
 
-  <p tal:condition="view.description"
-  tal:content="view.description">Description</p>
+    <p tal:condition="view.description"
+    tal:content="view.description">Description</p>
 
-  <div class="subforms">
-    <div class="subform"
-      tal:repeat="subform view.subforms"
-      tal:content="structure subform.render()">
-      Subform
+    <div>
+        <ul class="nav nav-tabs" id="myTab">
+            <li tal:repeat="subform view.subforms">
+            <a data-toggle="tab" href="" tal:attributes="href string:#${subform.label}">
+                <span tal:replace="subform.label"> </span>
+            </a>
+            </li>
+        </ul>
+
+        <div class="subforms tab-content">
+            <div class="subform tab-pane"
+                tal:attributes="id subform.label"
+                tal:repeat="subform view.subforms"
+                tal:content="structure subform.render()">
+                Subform
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="actions"
-    tal:condition="view.actionWidgets">
-    <div class="action" tal:repeat="widget view.actionWidgets">
-      <tal:widget tal:content="structure widget.render()" />
+    <script>
+        $(function () {
+            $('#myTab a:first').tab('show');
+        })
+    </script>
+
+
+    <div class="actions"
+        tal:condition="view.actionWidgets">
+        <div class="action" tal:repeat="widget view.actionWidgets">
+            <tal:widget tal:content="structure widget.render()" />
+        </div>
     </div>
-  </div>
 </div>

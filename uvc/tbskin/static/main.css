@@ -50,7 +50,8 @@ div#uvc-tabs ul {
 ul#documentactionsmenuviewlet{
   float: right;
   list-style: none;
-  padding-top: 1em;
+  padding-top: 7px;
+  margin-bottom: 3px,
 }
 
 .breadcrumb {
