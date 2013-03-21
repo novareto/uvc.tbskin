@@ -1,0 +1,24 @@
+<div metal:define-macro="field" class="control-group" 
+     tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
+    <label class="control-label" for="#" tal:attributes="for widget.htmlId()"> 
+        <span tal:content="widget.title"> </span> <span tal:condition="widget.required"> * </span> 
+    </label>
+    <tal:error tal:define="error widget.error" tal:condition="error" />
+    <div class="input controls">
+        <tal:widget tal:content="structure widget.render()" />
+        <span class="help-inline" tal:condition="widget.error" tal:content="widget.error.title"> Error </span>
+        <p class="help-block" tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()"></p>
+    </div>
+</div>
+
+
+<span metal:define-macro="field_inline" tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
+    <label for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title"> </label>
+    <tal:widget tal:content="structure widget.render()" />
+</span>
+
+<div metal:define-macro="form-actions" class="form-actions" tal:condition="view.actionWidgets">
+    <span class="action" tal:repeat="widget view.actionWidgets">
+        <tal:widget tal:content="structure widget.render()" />
+    </span>
+</div>

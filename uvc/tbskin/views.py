@@ -26,6 +26,11 @@ class FormMacros(grok.View):
     template = ChameleonPageTemplateFile('templates/formtemplate.cpt')
 
 
+class FieldMacros(grok.View):
+    grok.context(Interface)
+    template = ChameleonPageTemplateFile('templates/fieldtemplates.cpt')
+
+
 class FormTemplate(pt.PageTemplate):
     grok.layer(ITBSkin)
     grok.view(ApplicationForm)
