@@ -1,7 +1,8 @@
 $(document).ready(function()
     {
 
-    $('form input[type=submit]:first').addClass('btn btn-primary');
+    $('form input[type=submit]').addClass('btn');
+    $('form input[type=submit]:first').addClass('btn-primary');
 
     $.tablesorter.addParser({
       id: 'germandate',
