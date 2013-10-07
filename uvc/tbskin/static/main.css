@@ -1,3 +1,8 @@
+#uvc-header {
+    border-radius: 0 !important;
+}
+
+
 div#footerviewlet{
   float:right;
 
