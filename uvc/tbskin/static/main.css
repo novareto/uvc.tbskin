@@ -41,3 +41,16 @@ ul#documentactionsmenuviewlet{
 #uvc-tabs {
   margin-top: -1px;
 }
+
+.feature-text {
+  color: #7F7F7F;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 26px;
+}
+
+.feature-title {
+    color: #3F3F3F;
+    margin-bottom: 15px;
+}
+
