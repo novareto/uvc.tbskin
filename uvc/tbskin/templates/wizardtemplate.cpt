@@ -20,16 +20,9 @@
              </label>
 
           <div class="input controls">
-            <p class="help-block"
-	       tal:condition="widget.description"
-	       tal:content="widget.description"
-	       tal:attributes="for widget.htmlId()" />
-
             <tal:widget tal:content="structure widget.render()" />
-
-            <span class="help-inline"
-		  tal:condition="widget.error"
-		  tal:content="widget.error.title" />
+            <span class="help-inline" tal:condition="widget.error" tal:content="widget.error.title"> Error </span>
+            <p class="help-block" tal:condition="widget.description" tal:content="widget.description" tal:attributes="for widget.htmlId()"></p>
           </div>
         </div>
       </div>

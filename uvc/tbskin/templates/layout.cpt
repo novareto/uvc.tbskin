@@ -7,33 +7,25 @@
     <tal:header tal:content="structure provider:uvc-headers" />
   </head>
   <body>
-    <nav id="uvc-header" class="navbar-inverse navbar navbar-default"
-	 role="navigation">
-      <div class="container">
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-	  </button>
-	  <a tal:attributes="href view.application_url()" class="navbar-brand">UVCSite</a>
-	</div>
-	<div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
-	  <ul class="nav navbar-nav">
-	    <tal:viewlets content="structure provider:uvc-pagetop" />
-	  </ul>
-	</div>
+  <div id="uvc-header" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+	    <div class="container">
+  	    <a tal:attributes="href view.application_url()" class="brand">UVCSite</a>
+        <div class="nav-collapse">
+	         <tal:viewlets content="structure provider:uvc-pagetop" />
+        </div>
       </div>
-    </nav>
+    </div>
+	</div>
     <div class="container">
       <div class="content">
-	<div id="uvc-above-body"
+        <div id="uvc-above-body"
 	     tal:content="structure provider:uvc-above-body"></div>
-	<div id="uvc-tabs"
+        <div id="uvc-tabs"
 	     tal:content="structure provider:uvc-tabs"></div>
-	<div id="uvc-inner-body"
+        <div id="uvc-inner-body"
 	     tal:content="structure view.content()"></div>
-	<div id="uvc-below-body"
+        <div id="uvc-below-body"
 	     tal:content="structure provider:uvc-below-body"></div>
       </div>
       <footer class="footer" tal:content="structure provider:uvc-footer"></footer>
