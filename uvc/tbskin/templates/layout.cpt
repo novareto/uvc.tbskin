@@ -13,9 +13,7 @@
 	<div class="navbar-header">
 	  <a tal:attributes="href view.application_url()" class="navbar-brand">UVCSite</a>
 	</div>
-	<div>
-	  <tal:viewlets content="structure provider:uvc-pagetop" />
-	</div>
+	<div tal:content="structure provider:uvc-pagetop" />
       </div>
     </nav>
     <div class="container">
