@@ -7,7 +7,7 @@ import zope.security.management
 
 
 from grokcore.traverser import Traverser
-from megrok import layout
+from grokcore import layout
 from uvc.layout.layout import IUVCSkin
 from zope.component.hooks import setSite, getSite
 from zope.container.interfaces import IContainer
