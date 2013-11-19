@@ -7,15 +7,14 @@
     <tal:header tal:content="structure provider:uvc-headers" />
   </head>
   <body>
-    <nav id="uvc-header" class="navbar-inverse navbar navbar-default"
-	 role="navigation">
-      <div class="container">
-	<div class="navbar-header">
-	  <a tal:attributes="href view.application_url()" class="navbar-brand">UVCSite</a>
-	</div>
-	<div tal:content="structure provider:uvc-pagetop" />
+  <nav id="uvc-header" class="navbar-inverse navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a tal:attributes="href view.application_url()" class="navbar-brand">UVCSite</a>
       </div>
-    </nav>
+      <div class="collapse navbar-collapse" tal:content="structure provider:uvc-pagetop"> </div>
+    </div>
+  </nav>
     <div class="container">
       <div class="content">
 	<div id="uvc-above-body"

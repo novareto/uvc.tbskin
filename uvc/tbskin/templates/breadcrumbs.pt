@@ -1,7 +1,7 @@
 <ol class="breadcrumb" id="breadcrumb" i18n:domain="dolmen.app.breadcrumbs">
-  <li tal:repeat="crumb viewlet/crumbs">
+  <span tal:repeat="crumb viewlet/crumbs">
     <a href=""
        tal:attributes="href crumb/url"
        tal:content="crumb/name">name</a>
-  </li>
+  </span>
 </ol>
