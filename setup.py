@@ -24,7 +24,7 @@ setup(name='uvc.tbskin',
       install_requires=[
           'setuptools',
           'js.bootstrap',
-          # -*- Extra requirements: -*-
+          'js.jquery_tablesorter',
       ],
       entry_points={
          'fanstatic.libraries': [
