@@ -13,7 +13,8 @@
      tal:content="view.status">Status</p>
 
   <div class="fields" tal:condition="view.fieldWidgets">
-    <div class="control-group" tal:repeat="widget view.fieldWidgets">
+    <div class="control-group" tal:repeat="widget view.fieldWidgets"
+      tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
        <label class="control-label" for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title">Label</label>
        <tal:error tal:define="error widget.error" tal:condition="error" />
        <div class="input controls">
