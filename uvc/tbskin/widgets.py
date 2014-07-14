@@ -2,29 +2,30 @@
 # Copyright (c) 2007-2011 NovaReto GmbH
 # cklinger@novareto.de 
 
-import grok
+import uvclight
 
-from skin import ITBSkin 
+from .skin import ITBSkinLayer
 from zope.interface import Interface
-from zeam.form.base import interfaces
-from zeam.form.base.widgets import ActionWidget
-from zeam.form.ztk.widgets.choice import RadioFieldWidget, ChoiceSchemaField
-
-
-grok.templatedir('templates')
+from dolmen.forms.base import interfaces
+from dolmen.forms.base.widgets import ActionWidget
+from dolmen.forms.ztk.widgets.choice import RadioFieldWidget, ChoiceSchemaField
 
 
 class UvcRadioFieldWidget(RadioFieldWidget):
     """ Simple Override for removing <br> between choices
     """
-    grok.adapts(ChoiceSchemaField, Interface, ITBSkin)
+    uvclight.adapts(ChoiceSchemaField, Interface, ITBSkinLayer)
+    template = uvclight.get_template('uvcradiofieldwidget.cpt', __file__)
 
 
+    
 class ActionWidget(ActionWidget):
-    grok.adapts(
+    uvclight.adapts(
         interfaces.IAction,
         interfaces.IFieldExtractionValueSetting,
-        ITBSkin)
+        ITBSkinLayer)
 
+    template = uvclight.get_template('actionwidget.cpt', __file__)
+    
     def htmlClass(self):
         return 'action btn'

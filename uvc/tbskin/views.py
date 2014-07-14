@@ -2,65 +2,64 @@
 # Copyright (c) 2007-2011 NovaReto GMBH
 # ck@novareto.de
 
-import grok
+import uvclight
 import megrok.pagetemplate as pt
 
-
-from dolmen.forms.base import ApplicationForm
-from skin import ITBSkin
+from .skin import ITBSkinLayer
+from cromlech.browser import ITemplate
+from dolmen.location import get_absolute_url
+from grokcore.component import adapter, implementer, MultiAdapter
 from urllib import urlencode
-from uvc.layout.forms.components import GroupForm, SubForm, Wizard
-from uvc.layout.layout import IUVCSkin
+from uvc.layout.forms import Form, GroupForm, SubForm, Wizard
 from z3c.table.batch import BatchProvider
 from z3c.table.interfaces import ITable
 from zope.interface import Interface
-from zope.traversing.browser import absoluteURL
-from grokcore.chameleon.components import ChameleonPageTemplateFile
 
 
-grok.templatedir('templates')
+class FormMacros(uvclight.View):
+    uvclight.context(Interface)
+    template = uvclight.get_template('formtemplate.cpt', __file__)
 
 
-class FormMacros(grok.View):
-    grok.context(Interface)
-    template = ChameleonPageTemplateFile('templates/formtemplate.cpt')
+class FieldMacros(uvclight.View):
+    uvclight.context(Interface)
+    template = uvclight.get_template('fieldtemplates.cpt', __file__)
 
 
-class FieldMacros(grok.View):
-    grok.context(Interface)
-    template = ChameleonPageTemplateFile('templates/fieldtemplates.cpt')
+@adapter(Form, ITBSkinLayer)
+@implementer(ITemplate)
+def FormTemplate(context, request):
+    return uvclight.get_template('formtemplate.cpt', __file__)
 
 
-class FormTemplate(pt.PageTemplate):
-    grok.layer(ITBSkin)
-    grok.view(ApplicationForm)
+@adapter(SubForm, ITBSkinLayer)
+@implementer(ITemplate)
+def SubFormTemplate(context, request):
+    return uvclight.get_template('subformtemplate.cpt', __file__)
 
 
-class SubFormTemplate(pt.PageTemplate):
-    grok.layer(ITBSkin)
-    pt.view(SubForm)
+@adapter(GroupForm, ITBSkinLayer)
+@implementer(ITemplate)
+def GroupFormTemplate(context, request):
+    return uvclight.get_template('groupformtemplate.cpt', __file__)
 
 
-class GroupFormTemplate(pt.PageTemplate):
-    grok.layer(ITBSkin)
-    pt.view(GroupForm)
+@adapter(Wizard, ITBSkinLayer)
+@implementer(ITemplate)
+def WizardTemplate(context, request):
+    return uvclight.get_template('wizardtemplate.cpt', __file__)
 
 
-class WizardTemplate(pt.PageTemplate):
-    grok.layer(ITBSkin)
-    pt.view(Wizard)
-
-
-class CustomBatch(BatchProvider, grok.MultiAdapter):
-    grok.adapts(Interface, IUVCSkin, ITable)
-    grok.name('batch')
+class CustomBatch(BatchProvider, MultiAdapter):
+    uvclight.adapts(Interface, ITBSkinLayer, ITable)
+    uvclight.name('batch')
 
     def renderBatchLink(self, batch, cssClass=None):
         args = self.getQueryStringArgs()
         args[self.table.prefix + '-batchStart'] = batch.start
         args[self.table.prefix + '-batchSize'] = batch.size
         query = urlencode(sorted(args.items()))
-        tableURL = absoluteURL(self.table, self.request)
+        tableURL = get_absolute_url(self.table, self.request)
         idx = batch.index + 1
         css = ' class="%s"' % cssClass
         cssClass = cssClass and css or u''
