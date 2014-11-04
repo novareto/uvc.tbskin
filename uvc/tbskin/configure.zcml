@@ -4,6 +4,8 @@
   <include package="grok" />
   <include package="grokcore.layout" file="meta.zcml" />
   <grok:grok package="." />
+  <!--
   <browser:defaultSkin name="tbskin" />
+-->
 </configure>
 
