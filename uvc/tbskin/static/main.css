@@ -38,10 +38,6 @@ ul#documentactionsmenuviewlet{
   margin-bottom: 3px,
 }
 
-#uvc-tabs {
-  margin-top: -1px;
-}
-
 .feature-text {
   color: #7F7F7F;
   font-size: 14px;
@@ -68,4 +64,10 @@ ul#documentactionsmenuviewlet{
 .help-block {
     margin-bottom: 5px;
     margin-top: 0;
+}
+
+.alert {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
 }
