@@ -1,26 +1,21 @@
 <form
    role="form"
    noValidate="true"
-   class="form-horizontal" 
    method="post"
    enctype="multipart/form-data"
-   class="form-horizontal"
    novalidate="novalidate"
    i18n:domain="zeam.form.base"
    metal:define-macro="editform"
    tal:attributes="action request.URL">
 
-  <h2 tal:condition="view.label" tal:content="view.label" />
+  <h1 tal:condition="view.label" tal:content="view.label" />
   <p tal:condition="view.description" tal:content="view.description" />
 
   <p class="alert-message block-message"
      tal:condition="view.status"
      tal:content="view.status">Status</p>
 
- <fieldset metal:define-macro="form-fieldset">
-
-    <legend tal:condition="hasattr(view, 'legend')"
-	    tal:content="view.legend"></legend>
+ <div metal:define-macro="form-fieldset">
 
     <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo"></div>
 
@@ -42,5 +37,5 @@
     <div class="form-group" tal:condition="view.actionWidgets">
 	       <tal:widget tal:repeat="widget view.actionWidgets" tal:content="structure widget.render()" />
     </div>
- </fieldset>
+ </div>
 </form>
