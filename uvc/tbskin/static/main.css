@@ -71,3 +71,160 @@ ul#documentactionsmenuviewlet{
     border-color: #bce8f1;
     color: #31708f;
 }
+
+.wizard {
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.wizard:before, .wizard:after {
+    content: " ";
+    display: table;
+}
+
+.wizard:after {
+    clear: both;
+}
+
+.wizard:before, .wizard:after {
+    content: " ";
+    display: table;
+}
+
+.wizard:after {
+    clear: both;
+}
+
+.wizard ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.wizard ul.previous-disabled li.complete {
+    cursor: default;
+}
+
+.wizard ul.previous-disabled li.complete:hover {
+    background: none repeat scroll 0 0 #f3f4f5;
+    color: #3c763d;
+    cursor: default;
+}
+
+.wizard ul.previous-disabled li.complete:hover .chevron:before {
+    border-left-color: #f3f4f5;
+}
+
+.wizard ul li {
+    background: none repeat scroll 0 0 #ededed;
+    color: #999999;
+    cursor: default;
+    float: left;
+    font-size: 10px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 10px 0 20px;
+    position: relative;
+}
+
+.wizard ul li a {
+  color: #999999;
+}
+
+.wizard ul li .chevron {
+    border-color: rgba(0, 0, 0, 0) currentColor rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-image: none;
+    border-style: solid none solid solid;
+    border-width: 14px 0 14px 14px;
+    display: block;
+    position: absolute;
+    right: -14px;
+    top: 0;
+    z-index: 1;
+}
+
+.wizard ul li .chevron:before {
+    border-color: rgba(0, 0, 0, 0) currentColor rgba(0, 0, 0, 0) #ededed;
+    border-image: none;
+    border-style: solid none solid solid;
+    border-width: 24px 0 24px 14px;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 1px;
+    top: -24px;
+}
+
+.wizard ul li.complete {
+    background: none repeat scroll 0 0 #f3f4f5;
+    color: #3c763d;
+}
+
+.wizard ul li.complete:hover {
+    background: none repeat scroll 0 0 #e7eff8;
+    cursor: pointer;
+}
+
+.wizard ul li.complete:hover .chevron:before {
+    border-left: 14px solid #e7eff8;
+}
+
+.wizard ul li.complete .chevron:before {
+    border-left: 14px solid #f3f4f5;
+}
+
+.wizard ul li.active {
+    background: none repeat scroll 0 0 #f1f6fc;
+    color: #31708f;
+}
+
+.wizard ul li.active .chevron:before {
+    border-left: 14px solid #f1f6fc;
+}
+
+wizard ul li.active {
+    background: none repeat scroll 0 0 #f1f6fc;
+    color: #31708f;
+}
+
+.wizard ul li.active .chevron:before {
+    border-left: 14px solid #f1f6fc;
+}
+
+.wizard ul li .badge {
+    margin-right: 8px;
+}
+
+.wizard ul li:first-child {
+    border-radius: 4px 0 0 4px;
+    padding-left: 10px;
+}
+
+.wizard .actions {
+    background-color: #e5e5e5;
+    float: right;
+    line-height: 46px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    right: 0;
+    vertical-align: middle;
+    z-index: 1000;
+}
+
+.wizard .actions a {
+    font-size: 12px;
+    line-height: 45px;
+    margin-right: 8px;
+}
+
+.wizard .actions .btn-prev i {
+    margin-right: 5px;
+}
+
+.wizard .actions .btn-next i {
+    margin-left: 5px;
+}
