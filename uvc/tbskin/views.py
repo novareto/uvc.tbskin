@@ -103,4 +103,4 @@ class CustomBatch(BatchProvider, grok.MultiAdapter):
                 append(self.renderBatchLink(batch, css))
             else:
                 append(self.renderBatchLink(batch))
-        return u'<ul>%s</ul>' % (''.join(res))
+        return u'<ul class="pagination">%s</ul>' % (''.join(res))
