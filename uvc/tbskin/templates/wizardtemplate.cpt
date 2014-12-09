@@ -19,11 +19,11 @@
 	  <span tal:content="widget.title">Name</span>
 	  <span tal:condition="widget.required">*</span>
 	</label>
-	<span class="help-block" tal:condition="widget.description" tal:content="widget.description" tal:attributes="for widget.htmlId()" />
+	<p class="help-block" tal:condition="widget.description" tal:content="widget.description" tal:attributes="for widget.htmlId()" />
 	
 	<tal:widget tal:content="structure widget.render()" />
 	
-	<span class="help-block" tal:condition="widget.error" tal:content="widget.error.title" />
+	<p class="help-block" tal:condition="widget.error" tal:content="widget.error.title" />
       </div>
     </div>
     <div class="fields" tal:condition="view.fieldWidgets">
