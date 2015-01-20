@@ -30,7 +30,7 @@
       <p class="help-block" tal:condition="widget.description" tal:content="structure widget.description" tal:attributes="for widget.htmlId()" />
 
       <tal:widget tal:content="structure widget.render()" />
-      <p class="help-block" tal:condition="widget.error" tal:content="structure widget.error.title"> Error </p>
+      <p id="error-message" class="help-block" tal:condition="widget.error" tal:content="structure widget.error.title"> Error </p>
     </div>
     </tal:fields>
 
