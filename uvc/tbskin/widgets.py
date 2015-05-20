@@ -27,4 +27,4 @@ class ActionWidget(ActionWidget):
         ITBSkin)
 
     def htmlClass(self):
-        return 'action btn'
+        return 'action btn btn-primary'
