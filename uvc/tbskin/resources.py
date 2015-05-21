@@ -18,6 +18,7 @@ main_js = Resource(library, 'main.js', depends=[bootstrap_js, tablesorter])
 class TBSkinViewlet(resourceviewlet.ResourceViewlet):
     grok.context(Interface)
     resources = [main_css, main_js]
+    grok.baseclass()
 
     def update(self):
         [x.need() for x in self.resources]

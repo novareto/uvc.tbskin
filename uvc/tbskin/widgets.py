@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) 2007-2011 NovaReto GmbH
-# cklinger@novareto.de 
+# cklinger@novareto.de
 
 import grok
 
-from skin import ITBSkin 
+from skin import ITBSkin
 from zope.interface import Interface
 from zeam.form.base import interfaces
 from zeam.form.base.widgets import ActionWidget
