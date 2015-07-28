@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <tal:resources tal:content="provider:uvc-resources" />
+<!--  <tal:resources tal:content="provider:uvc-resources" /> -->
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="" tal:attributes="href layout.base"/>
-    <tal:header tal:content="structure provider:uvc-headers" />
+    <tal:header tal:content="structure provider:headers" />
   </head>
   <body>
   <nav id="uvc-header" class="navbar-inverse navbar navbar-default" role="navigation">
@@ -12,21 +12,21 @@
       <div class="navbar-header">
         <a tal:attributes="href view.application_url()" class="navbar-brand">UVCSite</a>
       </div>
-      <div class="collapse navbar-collapse" tal:content="structure provider:uvc-pagetop"> </div>
+      <div class="collapse navbar-collapse" tal:content="structure provider:pagetop"> </div>
     </div>
   </nav>
     <div class="container">
       <div class="content">
 	<div id="uvc-above-body"
-	     tal:content="structure provider:uvc-above-body"></div>
+	     tal:content="structure provider:above-body"></div>
 	<div id="uvc-tabs"
-	     tal:content="structure provider:uvc-tabs"></div>
+	     tal:content="structure provider:tabs"></div>
 	<div id="uvc-inner-body"
 	     tal:content="structure view.content()"></div>
 	<div id="uvc-below-body"
-	     tal:content="structure provider:uvc-below-body"></div>
+	     tal:content="structure provider:below-body"></div>
       </div>
-      <footer class="footer" tal:content="structure provider:uvc-footer"></footer>
+      <footer class="footer" tal:content="structure provider:footer"></footer>
     </div>
   </body>
 </html>
