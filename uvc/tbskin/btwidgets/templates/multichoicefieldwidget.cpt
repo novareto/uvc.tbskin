@@ -1,5 +1,5 @@
 <tal:widget>
-  <tal:choice tal:repeat="choice widget.renderableChoice()">
+  <div class="checkbox" tal:repeat="choice widget.renderableChoice()">
   <label>
     <input type="checkbox" id="#" name="#" value="#" checked="#" class="#"
            tal:attributes="name widget.identifier;
@@ -11,8 +11,7 @@
            tal:attributes="for choice.id"
            tal:content="choice.title"></span>
        </label>
-    <br />
-  </tal:choice>
+  </div>
   <input type="hidden" name="#" value="1"
          tal:attributes="name string:${widget.identifier}.present" />
 </tal:widget>
