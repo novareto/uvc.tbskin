@@ -17,6 +17,12 @@ class ChoiceDisplayWidget(ChoiceFieldWidget):
     name('display')
     template = getTemplate('choicedisplaywidget.cpt')
 
+    def valueToUnicode(self, value):
+        term = self.lookupTerm(value)
+        if term is not None:
+            return term.title
+        return u''
+
 
 class RadioFieldWidget(choice.RadioFieldWidget):
     adapts(choice.ChoiceField, Interface, ITBSkinLayer)
