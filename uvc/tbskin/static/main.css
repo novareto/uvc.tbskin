@@ -228,3 +228,9 @@ wizard ul li.active {
 .wizard .actions .btn-next i {
     margin-left: 5px;
 }
+
+
+.radio input[type=radio], .radio-inline input[type=radio], .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox] {
+    position: absolute;
+    margin-left: 0px !important;
+}
