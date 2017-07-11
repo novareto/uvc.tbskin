@@ -12,12 +12,10 @@
 </div>
 
 
-<span metal:define-macro="field_inline" tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
-  <div tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
+<div metal:define-macro="field_inline" tal:attributes="id 'field-' + widget.htmlId(); class widget.error and 'control-group error' or 'control-group'">
     <label for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title"> </label>
     <tal:widget tal:content="structure widget.render()" />
-  </div>
-</span>
+</div>
 
 <div metal:define-macro="form-actions" class="form-actions" tal:condition="view.actionWidgets">
     <span class="action" tal:repeat="widget view.actionWidgets">
