@@ -4,7 +4,7 @@ Changelog
 0.7.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use Boostrap3 CSS - Classes for macro fields 
 
 
 0.7.2 (2018-03-14)
