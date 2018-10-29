@@ -2,7 +2,7 @@
 Doctest
 =======
 
-nva.tbskin
+uvc.tbskin
 
 :Test-Layer: functional
 

@@ -26,5 +26,7 @@ class ActionWidget(ActionWidget):
         interfaces.IFieldExtractionValueSetting,
         ITBSkin)
 
+    icon = None
+
     def htmlClass(self):
-        return 'action btn btn-primary'
+        return 'btn ' + ' '.join(self.defaultHtmlClass)

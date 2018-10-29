@@ -2,7 +2,6 @@
     border-radius: 0 !important;
 }
 
-
 div#footerviewlet{
   float:right;
 
@@ -230,7 +229,89 @@ wizard ul li.active {
 }
 
 
-.radio input[type=radio], .radio-inline input[type=radio], .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox] {
+.radio input[type=radio],
+.radio-inline input[type=radio],
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox] {
     position: absolute;
     margin-left: 0px !important;
+}
+
+#plugins-panel > .grid > .grid-item {
+    padding: 10px;
+}
+
+#plugins-panel > .grid > .grid-item > .grid-item-inner {
+    display: block;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    min-height: 120px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+#plugins-panel > .grid > .grid-item > .grid-item-inner > i {
+    display: block;
+    margin-top: 10px;
+    font-size: 3em;
+    color: #888;
+}
+
+#plugins-panel > .grid > .grid-item > .grid-item-inner > span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: black;
+}
+
+#plugin .installed > i {
+    color: green;
+}
+
+#plugin .not-installed > i {
+    color: orange;
+}
+
+#plugin #plugin-status {
+    margin-top: 2em;
+}
+
+#plugin-status dl {
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+}
+
+#plugin-status dd {
+    background-color: white;
+    margin-left: 35%;
+    border-left: 1px dotted #bdc8ca;
+}
+
+#plugin-status dd:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#plugin-status dt {
+    float: left;
+    width: 35%;
+    padding-bottom: 0;
+}
+
+#plugin-status dt, #plugin-status dd {
+    box-sizing: border-box;
+    padding: 0.2em 0.5em;
+}
+
+#plugin-status dd ~ dt {
+    border-top: 1px solid #ddd;
+}
+
+#plugin-status dt ~ dd {
+    border-top: 1px solid #ddd;
 }
