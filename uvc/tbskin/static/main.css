@@ -246,26 +246,30 @@ wizard ul li.active {
     padding: 15px;
     border-radius: 8px;
     background-color: #f4f4f4;
-    min-height: 120px;
+    min-height: 150px;
     text-align: center;
     text-decoration: none !important;
     color: #666;
     border: 1px solid #ddd;
 }
 
+#plugins-panel > .grid > .grid-item > .grid-item-inner:hover {
+    background-color: #f0f0f0;
+}
+
 #plugins-panel > .grid > .grid-item > .grid-item-inner > i {
     display: block;
     margin-top: 10px;
-    font-size: 3em;
+    font-size: 2.6em;
     color: #888;
 }
 
 #plugins-panel > .grid > .grid-item > .grid-item-inner > span {
     display: block;
-    margin-top: 10px;
-    font-size: 1.3em;
+    margin-top: 14px;
+    font-size: 1.2em;
     font-weight: bold;
-    color: black;
+    color: #333;
 }
 
 #plugin .installed > i {
